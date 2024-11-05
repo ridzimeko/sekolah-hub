@@ -1,0 +1,35 @@
+---
+import Button from "./Button.astro";
+---
+
+<main>
+  <div class="hero-head-container">
+    <slot name="title" />
+    <slot name="subtitle" />
+    <Button cls="button-hero">
+      <slot name="button-action" />
+    </Button>
+  </div>
+</main>
+
+<style>
+  .hero-head-container {
+    max-width: 720px;
+    /* max-height: 420px; */
+    /* padding: 0 5.2rem; */
+    padding-top: 12rem;
+    color: white;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .button-hero {
+      margin: 3.6rem 0;
+    }
+  }
+</style>

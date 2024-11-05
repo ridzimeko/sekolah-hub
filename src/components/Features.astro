@@ -1,0 +1,82 @@
+---
+import { Book, Clock, PenTool, TrendingUp } from "lucide-astro";
+---
+
+<section class="feature-section">
+  <div class="feature-item">
+    <div class="feature-icon">
+      <Book size="36" />
+    </div>
+    <div class="feature-desc">
+      <p>Menggunakan Kurikulum Terbaru</p>
+    </div>
+  </div>
+
+  <div class="feature-item">
+    <div class="feature-icon">
+      <Clock size="36" />
+    </div>
+    <div class="feature-desc">
+      <p>Efektifitas Waktu Saat Belajar Disekolah</p>
+    </div>
+  </div>
+
+  <div class="feature-item">
+    <div class="feature-icon">
+      <PenTool size="36" />
+    </div>
+    <div class="feature-desc">
+      <p>Penyaluran Bakat dan Minat Siswa</p>
+    </div>
+  </div>
+
+  <div class="feature-item">
+    <div class="feature-icon">
+      <TrendingUp size="36" />
+    </div>
+    <div class="feature-desc">
+      <p>Mengawasi Tumbuh Kembang</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-section {
+    position: relative;
+    top: -40px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3.4rem;
+    background-color: white;
+    box-shadow: 100px 100px 80px rgba(0, 0, 0, 0.07);
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-icon {
+    border-radius: 100%;
+    background-color: blueviolet;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      color: white;
+    }
+  }
+
+  .feature-desc {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #606060;
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+interface Props {
+  reverse?: boolean;
+}
+
+import Button from "./Button.astro";
+
+const { reverse } = Astro.props;
+---
+
+<div class:list={["paragraph-section", { reverse }]}>
+  <section class="paragraph-image">
+    <slot name="image" />
+  </section>
+  <section class="paragraph-container">
+    <div class="paragraph-header">
+      <slot class="pargraph-header" name="head" />
+    </div>
+    <div class="paragraph-text">
+      <slot name="text" />
+    </div>
+    <div class="action-button">
+      <slot />
+    </div>
+  </section>
+</div>
+
+<style lang="scss">
+  .paragraph-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .paragraph-container {
+    max-height: 300px;
+    max-width: 620px;
+  }
+
+  .paragraph-header {
+    color: #444444;
+    font-size: 2.2rem;
+    font-family:
+      SF Pro Rounded,
+      sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.68px;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+  }
+
+  .paragraph-text {
+    color: #787878;
+    font-size: 1.2rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+
+  .action-button {
+    margin-top: 42px;
+  }
+</style>

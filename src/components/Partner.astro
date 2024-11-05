@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import dbl from "../../public/partner-logo/dbl_academy.png";
+import band from "../../public/partner-logo/band.png";
+import pertamina from "../../public/partner-logo/pertamina.png";
+import taekwondo from "../../public/partner-logo/taekwondo.png";
+import djarum from "../../public/partner-logo/djarum.png";
+---
+
+<div class="partner-section">
+  <div class="partner-flex">
+    <h2 class="partner-header">Partner Kerja Sama</h2>
+    <p class="partner-text">
+      Kami Bekerja sama dengan berbagai lembaga dan perusahaan besar diseluruh
+      Indonesia untuk menyalurkan bakat siswa kami. diharapakan dengan adanaya
+      kerja sama ini siswa dapat meraih prestasi
+    </p>
+  </div>
+
+  <div class="partner-logo">
+    <Image src={dbl} sizes="120px" title="DBL Academy" alt="DBL Academy" />
+    <Image src={pertamina} sizes="120px" title="Pertamina" alt="Pertamina" />
+    <Image
+      src={band}
+      sizes="120px"
+      title="Persatuan Band Indonesia"
+      alt="Persatuan Band Indonesia"
+    />
+    <Image src={djarum} sizes="120px" title="Djarum" alt="Djarum" />
+    <Image
+      src={taekwondo}
+      sizes="120px"
+      title="Taekwondo Indonesia"
+      alt="Taekwondo Indonesia"
+    />
+    <Image src={dbl} sizes="120px" title="DBL Academy" alt="DBL Academy" />
+  </div>
+</div>
+
+<style lang="scss">
+  .partner-section {
+    padding: 2rem 5.2rem;
+  }
+
+  .partner-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .partner-header {
+    color: #404040;
+    font-size: 57px;
+    font-family:
+      SF Pro Rounded,
+      sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.71px;
+    max-width: 420px;
+  }
+
+  .partner-text {
+    flex: 1 1 0;
+    color: #787878;
+    font-size: 1.2rem;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+
+  .partner-logo {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

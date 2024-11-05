@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+
+// Inagata image
+import inagataTemplate from "../../public/Inagata Template.svg";
+import { Facebook, Instagram, Twitter } from "lucide-astro";
+---
+
+<footer>
+  <section class="main">
+    <Image src={inagataTemplate} alt="Inagata Template" />
+    <p>
+      Jelajahi semua pengetahuan dan ilmu yang berguna bersama kami, untuk
+      kehidupan yang lebih bermanfaat
+    </p>
+
+    <div class="social-icons">
+      <div class="social-icon">
+        <Twitter size={100} />
+      </div>
+      <div class="social-icon">
+        <Facebook size={100} fill="#e33fab" />
+      </div>
+      <div class="social-icon">
+        <Instagram size={100} />
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-nav">
+    <div class="footer-nav-item">
+      <h3>Informasi</h3>
+      <a href="#">Artikel</a>
+      <a href="#">Galeri</a>
+    </div>
+    <div class="footer-nav-item">
+      <h3>Tentang</h3>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Hubungi Kami</a>
+    </div>
+    <div class="footer-nav-item">
+      <h3>Kantor Kami</h3>
+      <p>Indonesia Unamed road RT 01 RW 02 Surabaya</p>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  footer {
+    padding: 2.4rem 5.2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main {
+    max-width: 420px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 2px solid #e33fab;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.6rem;
+    color: #e33fab;
+  }
+
+  .footer-nav {
+    width: 676px;
+    height: 146px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 80px;
+    display: inline-flex;
+
+    & h3 {
+      color: #4b4b4b;
+      font-size: 24px;
+      font-family: Poppins;
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+
+    & a,
+    p {
+      color: #787879;
+      font-size: 20px;
+      font-family: Poppins;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+</style>

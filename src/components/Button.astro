@@ -1,0 +1,22 @@
+---
+interface Props {
+  cls?: string;
+}
+
+const { cls } = Astro.props;
+---
+
+<button class={cls}>
+  <slot />
+</button>
+
+<style>
+  button {
+    background-color: #e33fab;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.8rem 2.2rem;
+    border: none;
+    font-size: 1rem;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import Button from "./Button.astro";
+---
+
+<nav>
+  <img src="/Schools Logo.png" alt="Inagata School Icon" />
+
+  <div class="nav-link-container">
+    <a href="/">Beranda</a>
+    <a href="/about">Tentang Kita</a>
+    <a href="/news">Berita</a>
+    <a href="/gallery">Galeri</a>
+    <a href="/contact">Kontak</a>
+  </div>
+
+  <Button>PPOB</Button>
+</nav>
+
+<style>
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.2rem 5.2rem;
+  }
+
+  .nav-link-container {
+    display: inline-flex;
+    justify-content: center;
+    gap: 2.6rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.18rem;
+    }
+  }
+</style>
