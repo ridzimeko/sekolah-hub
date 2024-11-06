@@ -13,6 +13,9 @@ import student2 from "../../public/student2.png";
 import activity1 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
 import activity2 from "../../public/photos/unsplash_gsRi9cWCIB0.png";
 import activity3 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
+import articleImg1 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
+import articleImg2 from "../../public/photos/unsplash_gsRi9cWCIB0.png";
+import articleImg3 from "../../public/photos/unsplash_NTur2_QKpg0.png";
 
 // vector assets
 import ellipse1 from "../../public/vector/Ellipse 1.svg";
@@ -26,6 +29,30 @@ const activities = [
   { image: activity1, name: "Belajar Mengajar" },
   { image: activity2, name: "Sharing Session" },
   { image: activity3, name: "Kelulusan" },
+];
+
+const articles = [
+  {
+    image: articleImg1,
+    label: "Pengumuman",
+    title: "Kegiatan Belajar Mengajar Offline Dimulai",
+    description:
+      "Kegiatan yang adakan saat siswa selesai melakukan studi sekolah",
+  },
+  {
+    image: articleImg2,
+    label: "Pengumuman",
+    title: "Pengambilan Raport Semester Ganjil",
+    description:
+      "Kegiatan yang adakan saat siswa selesai melakukan studi sekolah",
+  },
+  {
+    image: articleImg3,
+    label: "Pengumuman",
+    title: "Jam Belajar Yang Efektif Pada Anak 8 - 12 Tahun",
+    description:
+      "Kegiatan yang adakan saat siswa selesai melakuakan studi sekolah",
+  },
 ];
 ---
 
@@ -103,18 +130,31 @@ const activities = [
     <Button>Lihat Detail</Button>
   </Paragraph>
 
-  <ArticleCard />
+  <div class="article-wrapper">
+    <h2>Information</h2>
+    <div class="article-lists">
+      {
+        articles.map((article) => (
+          <ArticleCard
+            image={article.image}
+            label={article.label}
+            title={article.title}
+            description={article.description}
+          />
+        ))
+      }
+    </div>
+  </div>
 </Layout>
 
 <style lang="scss">
   .school-activity-container {
     background-color: #30005f;
-    width: 86%;
-    height: 680px;
-    margin: 0 auto;
+    height: 560px;
     border-radius: 2rem;
     position: relative;
     overflow: auto;
+    padding: 2rem;
 
     & .vectors > img {
       position: absolute;
@@ -162,7 +202,6 @@ const activities = [
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 2.8rem 4rem;
 
       h2 {
         font-size: 2.2rem;
@@ -183,7 +222,6 @@ const activities = [
       display: grid;
       grid-template-columns: repeat(3, auto);
       gap: 2rem;
-      padding: 0 2rem;
 
       .card-body {
         background-color: #6804cb;
@@ -198,6 +236,20 @@ const activities = [
       > * {
         z-index: 5;
       }
+    }
+  }
+
+  .article-wrapper {
+    margin-top: 10rem;
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .article-lists {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
   }
 </style>

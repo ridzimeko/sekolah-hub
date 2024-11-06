@@ -1,0 +1,49 @@
+---
+import { ChevronLeft, ChevronRight } from "lucide-astro";
+---
+
+<div class="article-lists-footer">
+    <p class="pagination-text">Menampilkan 9 Dari 21 Data</p>
+    <div class="pagination-container">
+        <p>Halaman</p>
+        <ChevronLeft class="icon-button" />
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <ChevronRight class="icon-button" />
+    </div>
+</div>
+
+<style>
+    .article-lists-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+        color: gray;
+
+        .pagination-text {
+            font-size: 1.2rem;
+        }
+
+        .pagination-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            span,
+            .icon-button {
+                cursor: pointer;
+
+                &:first-of-type:not(svg) {
+                    color: #e33fab;
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+</style>

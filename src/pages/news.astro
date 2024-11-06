@@ -1,0 +1,132 @@
+---
+import ArticleHighlight from "../components/ArticleHighlight.astro";
+import Layout from "../layouts/Layout.astro";
+
+import articleImg1 from "../../public/photos/unsplash_PC91Jm1DlWA.png";
+import articleImg2 from "../../public/photos/unsplash_g1Kr4Ozfoac.png";
+import articleImg3 from "../../public/photos/unsplash_iQPr1XkF5F0.png";
+import articleImg4 from "../../public/photos/unsplash_9o8YdYGTT64.png";
+import articleImg5 from "../../public/photos/unsplash_NsPDiPFTp4c.png";
+import articleImg6 from "../../public/photos/unsplash_r9T0LZv8xWQ.png";
+import articleImg7 from "../../public/photos/unsplash_J_galDuu4kc.png";
+import articleImg8 from "../../public/photos/unsplash_RYABMCLP7aM.png";
+import articleImg9 from "../../public/photos/unsplash_KxCq-xveKcU.png";
+import ArticleCard from "../components/ArticleCard.astro";
+import FooterPagination from "../components/partials/FooterPagination.astro";
+
+const articles = [
+    {
+        image: articleImg1,
+        label: "Pengumuman",
+        date: "2020-12-12",
+        title: "Kegiatan Belajar Mengajar Offline Dimulai",
+    },
+    {
+        image: articleImg2,
+        label: "Pengumuman",
+        date: "2020-12-12",
+        title: "Pengambilan Raport Semester Ganjil 2021-2022",
+    },
+    {
+        image: articleImg3,
+        label: "Berita",
+        date: "2020-12-12",
+        title: "Jam Belajar Yang Efektif Pada Anak 8 - 12 Tahun",
+    },
+    {
+        image: articleImg4,
+        label: "Berita",
+        date: "2020-12-12",
+        title: "Kegiatan Belajar Mengajar Offline Dimulai",
+    },
+    {
+        image: articleImg5,
+        label: "Berita",
+        date: "2020-12-12",
+        title: "Pengambilan Raport Semester Ganjil 2021-2022",
+    },
+    {
+        image: articleImg6,
+        label: "Pengumuman",
+        date: "2020-12-12",
+        title: "Jam Belajar Yang Efektif Pada Anak 8 - 12 Tahun",
+    },
+    {
+        image: articleImg7,
+        label: "Pengumuman",
+        date: "2020-12-12",
+        title: "Kegiatan Belajar Mengajar Offline Dimulai",
+    },
+    {
+        image: articleImg8,
+        label: "Berita",
+        date: "2020-12-12",
+        title: "Pengambilan Raport Semester Ganjil 2021-2022",
+    },
+    {
+        image: articleImg9,
+        label: "Berita",
+        date: "2020-12-12",
+        title: "Jam Belajar Yang Efektif Pada Anak 8 - 12 Tahun",
+    },
+];
+---
+
+<Layout title="Tentang Kami" description="">
+    <h1 slot="title">Berita</h1>
+    <p slot="subtitle">
+        Halaman Yang Akan Memberikan Pemberitahuan dan Pengetahuan Untuk Anda
+    </p>
+
+    <ArticleHighlight />
+
+    <div class="article-lists">
+        <div class="article-tab-container">
+            <button class="active">Semua</button>
+            <button>Berita</button>
+            <button>Pengumuman</button>
+        </div>
+        <div class="article-card-container">
+            {
+                articles.map((article) => (
+                    <ArticleCard
+                        image={article.image}
+                        label={article.label}
+                        date={article.date}
+                        title={article.title}
+                    />
+                ))
+            }
+        </div>
+
+        <FooterPagination />
+    </div>
+</Layout>
+
+<style lang="scss">
+    .article-lists {
+        .article-tab-container {
+            display: flex;
+            margin-bottom: 2rem;
+
+            button {
+                padding: 1rem 2rem;
+                background-color: #fff;
+                border: none;
+                font-weight: 500;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+            .active {
+                border-bottom: 1px solid #e33fab;
+            }
+        }
+
+        .article-card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+    }
+</style>

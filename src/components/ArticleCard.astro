@@ -1,19 +1,30 @@
 ---
-import imginfo1 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
-import imginfo2 from "../../public/photos/unsplash_gsRi9cWCIB0.png";
-import imginfo3 from "../../public/photos/unsplash_NTur2_QKpg0.png";
 import { Image } from "astro:assets";
+
+interface Props {
+  image: ImageMetadata;
+  title: string;
+  description?: string;
+  date?: string;
+  label?: string;
+}
+
+const { image, title, description, date, label } = Astro.props;
 ---
 
 <div class="article-card-container">
-  <Image class="card-img" src={imginfo2} alt="" />
+  <Image class="card-img" src={image} alt="" />
   <div class="card-body">
-    <div class="card-label">
-      <p>Pengumuman</p>
-    </div>
+    {
+      label && (
+        <div class="card-label">
+          <p>{label}</p>
+        </div>
+      )
+    }
     <div class="card-header">
-      <h3>Kegiatan Belajar Mengajar Offline Dimulai</h3>
-      <p>Kegiatan yang adakan saat siswa selesai melakuakan studi sekolah</p>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   </div>
 </div>
@@ -21,6 +32,7 @@ import { Image } from "astro:assets";
 <style>
   .article-card-container {
     border-radius: 16px;
+    cursor: pointer;
 
     &.card-body {
       align-self: stretch;
