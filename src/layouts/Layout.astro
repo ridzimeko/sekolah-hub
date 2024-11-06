@@ -46,7 +46,9 @@ const { title, description } = Astro.props;
       </div>
     </div>
     <!-- slot -->
-    <slot />
+    <div class="app-slot">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
@@ -100,5 +102,9 @@ const { title, description } = Astro.props;
     .hero-button-container {
       margin: 3.6rem 0;
     }
+  }
+
+  .app-slot {
+    padding: 0 5.2rem;
   }
 </style>

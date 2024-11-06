@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import busImg from "../../public/photos/unsplash_7K_agbqPqYo.png";
+---
+
+<div class="article-highlight">
+    <h2>Informasi Terbaru</h2>
+    <div class="article-card-container">
+        <Image class="article-img" src={busImg} alt="School bus" />
+        <div class="article-label">
+            <div class="label">
+                <p>Pengumuman</p>
+            </div>
+        </div>
+        <p>
+            Jika anak kita ditanya apa mimpinya pasti jawabnya saya ingin
+            kembali belajar di sekolah. Saya ingin bertemu dengan teman-teman
+            sekelas saya. begitupun sebagian besar orang tua, mimpi mereka
+            adalah melihat anaknya kembali ke aktivitas sekolah secara langsung.
+            Orang tua selama ini banyak yang mengaku lelah karena anak-anaknya
+            selama pandemi lebih banyak menghabiskan waktu <span
+                >Read More...</span>
+        </p>
+    </div>
+</div>
+
+<style lang="scss">
+    .article-highlight {
+        .article-card-container .article-img {
+            border-radius: 2rem;
+        }
+    }
+</style>

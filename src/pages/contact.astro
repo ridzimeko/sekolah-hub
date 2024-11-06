@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Gallery" description="Galeri Sekolah">
+    <h1 slot="title">Kontak</h1>
+    <p slot="subtitle">
+        Anda Membutuhkan Bantuan Bertanya Atau Sekeda Berbincang Kami Siap
+        Membantu
+    </p>
+
+    <div class="contact-wrapper">
+        <section class="contact-header">
+            <h2>Kontak <br /> Kami</h2>
+            <p>
+                Untuk Setiap Pertanyaan, Perkiraan Proyek Atau Katakan Saja Halo
+                Get Touch Anda Dapat Menelepon Atau Mengobrol Bersama Kami
+            </p>
+        </section>
+        <section class="contact-info">
+            <div class="number-container">
+                <h3>Number</h3>
+                <p>(229) 555-0109 (405) 555-0128</p>
+            </div>
+            <div class="office-address-container">
+                <h3>Office Address</h3>
+                <p>4140 Parker Rd.Richardson California 62639</p>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+        padding: 5rem;
+
+        .contact-header h2 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .contact-info {
+            .number-container,
+            .office-address-container {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                h3 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+</style>

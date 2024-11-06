@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Import image assets
+import articleImg1 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
+import articleImg2 from "../../public/photos/unsplash_gsRi9cWCIB0.png";
+import articleImg3 from "../../public/photos/unsplash_NTur2_QKpg0.png";
+import articleImg4 from "../../public/photos/unsplash_gtK3qLDKf9g.png";
+import articleImg5 from "../../public/photos/unsplash_6CH6tftqENQ.png";
+import articleImg6 from "../../public/photos/unsplash_CTd5_C7p__8.png";
+import articleImg7 from "../../public/photos/unsplash_nyuWugmjXis.png";
+import articleImg8 from "../../public/photos/unsplash_N17Nkbsc-zY.png";
+import articleImg9 from "../../public/photos/unsplash_SYTO3xs06fU.png";
+import ArticleCard from "../components/ArticleCard.astro";
+import FooterPagination from "../components/partials/FooterPagination.astro";
+
+const articles = [
+    {
+        image: articleImg1,
+        title: "Belajar Mengajar",
+        description:
+            "Kegiatan belajar mengajar diadakan setiap hari Senin hingga Jum'at",
+    },
+    {
+        image: articleImg2,
+        title: "Sharing Session",
+        description:
+            "Kegiatan menukar pendapat dan pikiran antara guru dan siswa",
+    },
+    {
+        image: articleImg3,
+        title: "Presentasi Projek",
+        description:
+            "Kegiatan menunjukkan hasil pekerjaan dari guru untuk melatih keberanian",
+    },
+    {
+        image: articleImg4,
+        title: "Belajar Mengajar",
+        description:
+            "Kegiatan belajar mengajar diadakan setiap hari Senin hingga Jum'at",
+    },
+    {
+        image: articleImg5,
+        title: "Sharing Session",
+        description:
+            "Kegiatan menukar pendapat dan pikiran antara guru dan siswa",
+    },
+    {
+        image: articleImg6,
+        title: "Presentasi Projek",
+        description:
+            "Kegiatan menunjukkan hasil pekerjaan dari guru untuk melatih keberanian",
+    },
+    {
+        image: articleImg7,
+        title: "Belajar Mengajar",
+        description:
+            "Kegiatan belajar mengajar diadakan setiap hari Senin hingga Jum'at",
+    },
+    {
+        image: articleImg8,
+        title: "Sharing Session",
+        description:
+            "Kegiatan menukar pendapat dan pikiran antara guru dan siswa",
+    },
+    {
+        image: articleImg9,
+        title: "Presentasi Projek",
+        description:
+            "Kegiatan menunjukkan hasil pekerjaan dari guru untuk melatih keberanian",
+    },
+];
+---
+
+<Layout title="Gallery" description="Galeri Sekolah">
+    <h1 slot="title">Gallery</h1>
+    <p slot="subtitle">
+        Halaman Yang Akan Memberikan Dokumentasi Kegiatan Sekolah
+    </p>
+
+    <div class="articles-wrapper">
+        <h2>Kumpulan Kegiatan Sekolah</h2>
+        <div class="article-lists">
+            {
+                articles.map((article) => (
+                    <ArticleCard
+                        image={article.image}
+                        title={article.title}
+                        description={article.description}
+                    />
+                ))
+            }
+        </div>
+    </div>
+
+    <FooterPagination />
+</Layout>
+
+<style>
+    .articles-wrapper {
+        h2 {
+            text-align: center;
+        }
+       
+        .article-lists {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+    }
+</style>
