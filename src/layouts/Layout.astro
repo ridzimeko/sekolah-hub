@@ -8,8 +8,11 @@ import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
+
+// Hero image vector
+import heroVector from "../../public/vector.svg";
+import { Image } from "astro:assets";
 
 const { title, description } = Astro.props;
 ---
@@ -24,14 +27,30 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Navbar />
-    <div class="main">
-      <slot />
+    <div class="web-header">
+      <!-- navbar -->
+      <Navbar />
+
+      <!-- hero -->
+      <div class="hero-head-wrapper">
+        <section class="hero-text-container">
+          <slot name="title" />
+          <slot name="subtitle" />
+          <div class="hero-button-container">
+            <slot name="button" />
+          </div>
+        </section>
+        <section class="hero-image">
+          <Image src={heroVector} alt="Shape" width={480} />
+        </section>
+      </div>
     </div>
+    <!-- slot -->
+    <slot />
     <Footer />
   </body>
 </html>
-<style is:global>
+<style is:global lang="scss">
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -50,11 +69,36 @@ const { title, description } = Astro.props;
     margin: 0;
   }
 
-  main {
-    position: relative;
+  .web-header {
     background-color: #6100c1;
     height: 100dvh;
     z-index: -10;
     padding: 0 5.2rem;
+  }
+
+  .hero-head-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8rem;
+    color: white;
+
+    .hero-text-container {
+      max-width: 540px;
+
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+        line-height: 1;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .hero-button-container {
+      margin: 3.6rem 0;
+    }
   }
 </style>

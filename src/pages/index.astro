@@ -5,7 +5,6 @@ import Button from "../components/Button.astro";
 import Partner from "../components/Partner.astro";
 import Paragraph from "../components/Paragraph.astro";
 import ArticleCard from "../components/ArticleCard.astro";
-import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
 
 // Image assets
@@ -31,15 +30,12 @@ const activities = [
 ---
 
 <Layout title="Selamat Datang - Inagata School" description="">
-  <Hero>
-    <h1 slot="title">Tuntut Ilmu Untuk Masa Depan Yang Cerah</h1>
-    <p slot="subtitle">
-      Jelajahi semua pengetahuan dan ilmu bermanfaat yang berguna untuk
-      kehidupan anda kedepannya agar lebih bermanfaat dalam hidup anda dan orang
-      lain
-    </p>
-    <Button>Mulai Belajar</Button>
-  </Hero>
+  <h1 slot="title">Tuntut Ilmu Untuk Masa Depan Yang Cerah</h1>
+  <p slot="subtitle">
+    Jelajahi semua pengetahuan dan ilmu bermanfaat yang berguna untuk kehidupan
+    anda kedepannya agar lebih bermanfaat dalam hidup anda dan orang lain
+  </p>
+  <Button slot="button">Mulai Belajar</Button>
 
   <Features />
 

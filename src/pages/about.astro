@@ -1,5 +1,172 @@
 ---
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+import Features from "../components/Features.astro";
+import Paragraph from "../components/Paragraph.astro";
 import Layout from "../layouts/Layout.astro";
+
+import student1 from "../../public/student1.png";
+import profileVideoThumb from "../../public/photos/unsplash_gsRi9cWCIB0.png";
+import { PlayCircle } from "lucide-astro";
+
+// image staff assets
+import staff1 from "../../public/photos/teacher_staff/unsplash_SJvDxw0azqw.png";
+import staff2 from "../../public/photos/teacher_staff/unsplash_sgZX15Da8YE.png";
+import staff3 from "../../public/photos/teacher_staff/unsplash_FcLyt7lW5wg.png";
+import staff4 from "../../public/photos/teacher_staff/unsplash__THUISs23CI.png";
+import staff5 from "../../public/photos/teacher_staff/unsplash_c-mgSuxqpzA.png";
+import staff6 from "../../public/photos/teacher_staff/unsplash_32co88SaiN4.png";
+import staff7 from "../../public/photos/teacher_staff/unsplash_Zz5LQe-VSMY.png";
+import staff8 from "../../public/photos/teacher_staff/unsplash_EH4i-6hxJag.png";
+
+// partner logo assets
+import dbl from "../../public/partner-logo/dbl_academy.png";
+import band from "../../public/partner-logo/band.png";
+import pertamina from "../../public/partner-logo/pertamina.png";
+import taekwondo from "../../public/partner-logo/taekwondo.png";
+import djarum from "../../public/partner-logo/djarum.png";
+
+const staffs = [
+    { image: staff1, name: 'Ms. Y', position: 'Kepala Sekolah'},
+    { image: staff2, name: 'Mr. X', position: 'Kepala Staff'},
+    { image: staff3, name: 'Ms. Y', position: 'Guru Matematika'},
+    { image: staff4, name: 'Mr. X', position: 'Guru Biologi'},
+    { image: staff5, name: 'Ms. Y', position: 'Guru Fisika'},
+    { image: staff6, name: 'Mr. X', position: 'Guru Bahasa'},
+    { image: staff7, name: 'Ms. Y', position: 'Guru Kimia'},
+    { image: staff8, name: 'Mr. X', position: 'Guru Seni Budaya'},
+]
+
+const partners = [
+    { image: dbl, name: 'DBL Academy'},
+    { image: pertamina, name: 'Pertamina'},
+    { image: band, name: 'Persatuan Band Indonesia'},
+    { image: djarum, name: 'Djarum'},
+    { image: taekwondo, name: 'Taekwondo Indonesia'},
+    { image: djarum, name: 'Djarum'},
+    { image: taekwondo, name: 'Taekwondo Indonesia'}
+]
 ---
 
-<Layout title="Tentang Kami" description="" />
+<Layout title="Tentang Kami" description="">
+    <h1 slot="title">Tentang Kami</h1>
+    <p slot="subtitle">
+        Penjelasan Tentang Sekolah Kami Yang Dapat Menambah Referesi Anda
+    </p>
+
+    <Paragraph>
+        <Image
+            src={student1}
+            slot="image"
+            width={512}
+            height={512}
+            alt="student"
+        />
+        <h2 style="margin-top: 0;" slot="head">
+            Sekolah Alam <br /> Insan Mulia Berkarya
+        </h2>
+        <p slot="text">
+            Sekolah Kami merupakan sekolah informal yang dikelola untuk membantu
+            anak mengembangkan bakat dan kemampuannya. Dengan memberikan
+            kurikulum terbaik agar anak bisa memilih minatnya dan fokus
+            mengembangkan minat tersebut. Sekolah ini didirikan sejak tahun 1989
+            dan terus berkembang
+        </p>
+        <Button>Mulai Belajar</Button>
+    </Paragraph>
+
+    <div style="margin: 6rem 0;">
+        <Features />
+    </div>
+
+    <div class="video-profile-wrapper">
+        <section class="video-profile-header">
+            <h2>Video Profil</h2>
+            <p>Berikut adalah video profil dari sekolah kami</p>
+        </section>
+        <section class="video-section">
+            <Image class="video-thumb" src={profileVideoThumb} alt="Video profil sekolah Inagata" />
+            <button>
+                <PlayCircle size={72} />
+            </button>
+        </section>
+    </div>
+
+    <div class="staff-wrapper">
+        <h1>Guru dan Staff Sekolah</h1>
+        <div class="staff-card-container">
+          { staffs.map(staff => (
+           <div class="staff-card">
+              <Image class="staff-image" src={staff.image} alt={staff.name} />
+              <div class="staff-info">
+                <h3 class="staff-name">{staff.name}</h3>
+                <p class="staff-position">{staff.position}</p>
+              </div>
+           </div>
+           ))
+        }
+    </div>
+
+    <div class="partner-wrapper">
+        <div class="partner-header">
+            <h2>Partner Kerja Sama</h2>
+            <p>Kami bekerja sama dengan berbagai lembaga diseluruh Indonesia untuk menyalurkan bakat siswa kami</p>
+        </div>
+        <div class="partner-logo-container">
+            {
+                partners.map(partner => (
+                    <Image class='partner-img' src={partner.image} alt={partner.name} />
+                ))
+            }
+        </div>
+    </div>
+</Layout>
+
+<style lang="scss">
+    .video-profile-wrapper {
+
+        .video-profile-header {
+            text-align: center;
+        }
+
+        .video-section {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: fit-content;
+            margin: 0 auto;
+
+            .video-thumb {
+                width: 920px;
+                height: 460px;
+                object-fit: cover;
+                border-radius: 2rem;
+            }
+            
+            button {
+                position: absolute;
+                border: none;
+                background: white;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    .staff-wrapper {
+        text-align: center;
+
+        .staff-card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+    }
+
+    .partner-wrapper {
+        .partner-logo-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+    }
+</style>
