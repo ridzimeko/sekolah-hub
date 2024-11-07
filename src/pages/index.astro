@@ -12,7 +12,7 @@ import student1 from "../../public/student1.png";
 import student2 from "../../public/student2.png";
 import activity1 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
 import activity2 from "../../public/photos/unsplash_gsRi9cWCIB0.png";
-import activity3 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
+import activity3 from "../../public/photos/unsplash_8CqDvPuo_kI.png";
 import articleImg1 from "../../public/photos/unsplash_zFSo6bnZJTw.png";
 import articleImg2 from "../../public/photos/unsplash_gsRi9cWCIB0.png";
 import articleImg3 from "../../public/photos/unsplash_NTur2_QKpg0.png";
@@ -24,6 +24,9 @@ import polygon1 from "../../public/vector/Polygon 1.svg";
 import polygon2 from "../../public/vector/Polygon 2.svg";
 import rectangle1 from "../../public/vector/Rectangle 5.svg";
 import rectangle2 from "../../public/vector/Rectangle 6.svg";
+import ellipse_s1 from "../../public/vector/Ellipse-stroke1.png";
+import ellipse_s2 from "../../public/vector/Ellipse-stroke2.png";
+import { ArrowRight } from "lucide-astro";
 
 const activities = [
   { image: activity1, name: "Belajar Mengajar" },
@@ -64,7 +67,9 @@ const articles = [
   </p>
   <Button slot="button">Mulai Belajar</Button>
 
-  <Features />
+  <div class="feature-wrapper">
+    <Features />
+  </div>
 
   <Paragraph>
     <Image src={student1} slot="image" width={512} height={512} alt="student" />
@@ -110,6 +115,7 @@ const articles = [
               />
               <div class="card-body">
                 <p>{act.name}</p>
+                <ArrowRight />
               </div>
             </a>
           </div>
@@ -120,7 +126,7 @@ const articles = [
 
   <Paragraph reverse>
     <Image src={student2} slot="image" width={512} height={512} alt="student" />
-    <h2 style="margin-top: 0;" slot="head">
+    <h2 slot="head">
       Dapatkan <br /> Penawaran Menarik
     </h2>
     <p slot="text">
@@ -130,8 +136,20 @@ const articles = [
     <Button>Lihat Detail</Button>
   </Paragraph>
 
+  <div class="cta-register-wrapper">
+    <div class="cta-item">
+      <h1>Daftarkan Anak Anda Kontak Kami (031 123-4567)</h1>
+      <Button>Lihat Semua</Button>
+    </div>
+    <Image id="elp1" src={ellipse_s1} alt="" />
+    <Image id="elp2" src={ellipse_s2} alt="" />
+  </div>
+
   <div class="article-wrapper">
-    <h2>Information</h2>
+    <div class="article-header-container">
+      <h2>Information</h2>
+      <a href="#">Lihat Semua</a>
+    </div>
     <div class="article-lists">
       {
         articles.map((article) => (
@@ -148,13 +166,23 @@ const articles = [
 </Layout>
 
 <style lang="scss">
+  .feature-wrapper {
+    position: relative;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 24px 0px #0000000d;
+    z-index: 10;
+  }
+
   .school-activity-container {
     background-color: #30005f;
-    height: 560px;
     border-radius: 2rem;
     position: relative;
     overflow: auto;
-    padding: 2rem;
+    padding: 2rem 4rem 4rem;
+    margin: 2.6rem 0;
 
     & .vectors > img {
       position: absolute;
@@ -209,6 +237,7 @@ const articles = [
 
       a {
         font-size: 1.2rem;
+        text-decoration: none;
       }
 
       > * {
@@ -223,13 +252,31 @@ const articles = [
       grid-template-columns: repeat(3, auto);
       gap: 2rem;
 
-      .card-body {
+      .card-item {
         background-color: #6804cb;
-        color: white;
-        width: 100%;
+        border-radius: 1.2rem;
 
-        p {
-          font-size: 1.2rem;
+        a {
+          text-decoration: none;
+        }
+
+        .card-img {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 1.2rem 1.2rem 0 0;
+        }
+
+        .card-body {
+          color: white;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding-left: 1.2rem;
+          gap: 0.6rem;
+
+          p {
+            font-size: 1.2rem;
+          }
         }
       }
 
@@ -239,11 +286,61 @@ const articles = [
     }
   }
 
+  .cta-register-wrapper {
+    position: relative;
+    background-color: #30005f;
+    border-radius: 2rem;
+    color: white;
+    padding: 6rem 4rem;
+    margin-top: 6.8rem;
+
+    .cta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      max-width: 512px;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      font-size: 2.2rem;
+    }
+
+    #elp1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    #elp2 {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
   .article-wrapper {
     margin-top: 10rem;
 
-    h2 {
-      font-size: 2.2rem;
+    .article-header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: 2.6rem;
+        font-weight: 500;
+      }
+
+      a {
+        text-decoration: none;
+        color: #E33FAB;
+        font-size: 1.2rem;
+      }
     }
 
     .article-lists {

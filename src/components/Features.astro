@@ -2,7 +2,7 @@
 import { Book, Clock, PenTool, TrendingUp } from "lucide-astro";
 ---
 
-<section class="feature-section">
+<div class="feature-section">
   <div class="feature-item">
     <div class="feature-icon">
       <Book size="36" />
@@ -38,20 +38,15 @@ import { Book, Clock, PenTool, TrendingUp } from "lucide-astro";
       <p>Mengawasi Tumbuh Kembang</p>
     </div>
   </div>
-</section>
+</div>
 
 <style>
   .feature-section {
-    /* position: relative;
-    top: -40px;
-    width: 80%;
-    background-color: white; */
-    margin: 0 auto;
-    border-radius: 1rem;
+    background-color: white;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 3.4rem;
-    box-shadow: 100px 100px 80px rgba(0, 0, 0, 0.07);
+    padding: 2rem 3.6rem;
+    border-radius: 1rem;
   }
 
   .feature-item {

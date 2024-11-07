@@ -1,9 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
+import schoolsLogo from "../../public/Schools Logo.png"
 ---
 
 <nav>
-  <img src="/Schools Logo.png" alt="Inagata School Icon" />
+  <Image src={schoolsLogo} alt="Inagata School Icon" />
 
   <div class="nav-link-container">
     <a href="/">Beranda</a>
