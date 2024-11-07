@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import Label from "./partials/Label.astro";
 
 interface Props {
   image: ImageMetadata;
@@ -15,16 +16,13 @@ const { image, title, description, date, label } = Astro.props;
 <div class="article-card-container">
   <Image class="card-img" src={image} alt="" />
   <div class="card-body">
-    {
-      label && (
-        <div class="card-label">
-          <p>{label}</p>
-        </div>
-      )
-    }
+    <div class="article-label">
+      {label && <Label {label} />}
+    </div>
     <div class="card-header">
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <p class="article-date">{date}</p>
+      <h3 class="article-title">{title}</h3>
+      <p class="article-description">{description}</p>
     </div>
   </div>
 </div>
@@ -34,43 +32,29 @@ const { image, title, description, date, label } = Astro.props;
     border-radius: 16px;
     cursor: pointer;
 
-    &.card-body {
-      align-self: stretch;
-      height: 178px;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 16px;
-      display: flex;
-    }
-
-    &.card-img {
-      height: 180px;
-      background: linear-gradient(0deg, #c4c4c4 0%, #c4c4c4 100%);
-      border-radius: 24px;
-    }
-
-    & .card-label {
-      display: inline-block;
-      padding: 0.2rem 0.8rem;
-      background: #732f9d;
-      border-radius: 20px;
-
-      & p {
-        color: white;
-        font-size: 0.68rem;
-      }
+    .card-body {
+      margin-top: 1rem;
     }
 
     .card-header {
-      & h3 {
-        width: 357.33px;
-        color: #404040;
+      margin-top: 1rem;
+
+      .article-date {
+        margin: 0;
+        margin-bottom: 0.2rem;
         font-size: 1.2rem;
-        font-weight: 500;
+        color: #787878;
       }
 
-      & p {
+      .article-title {
+        width: 357.33px;
+        color: #404040;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .article-description {
         width: 357.33px;
         color: #787878;
         font-size: 16px;

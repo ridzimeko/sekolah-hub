@@ -7,46 +7,52 @@ import { Facebook, Instagram, Twitter } from "lucide-astro";
 ---
 
 <footer>
-  <section class="main">
-    <Image src={inagataTemplate} alt="Inagata Template" />
-    <p>
-      Jelajahi semua pengetahuan dan ilmu yang berguna bersama kami, untuk
-      kehidupan yang lebih bermanfaat
-    </p>
-
-    <div class="social-icons">
-      <div class="social-icon">
-        <Twitter size={100} />
+  <section class="footer-container">
+    <div class="main">
+      <Image src={inagataTemplate} alt="Inagata Template" />
+      <p>
+        Jelajahi semua pengetahuan dan ilmu yang berguna bersama kami, untuk
+        kehidupan yang lebih bermanfaat
+      </p>
+  
+      <div class="social-icons">
+        <div class="social-icon">
+          <Twitter size={100} />
+        </div>
+        <div class="social-icon">
+          <Facebook size={100} fill="#e33fab" />
+        </div>
+        <div class="social-icon">
+          <Instagram size={100} />
+        </div>
       </div>
-      <div class="social-icon">
-        <Facebook size={100} fill="#e33fab" />
+    </div>
+  
+    <div class="footer-nav">
+      <div class="footer-nav-item">
+        <h3>Informasi</h3>
+        <a href="#">Artikel</a>
+        <a href="#">Galeri</a>
       </div>
-      <div class="social-icon">
-        <Instagram size={100} />
+      <div class="footer-nav-item">
+        <h3>Tentang</h3>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Hubungi Kami</a>
+      </div>
+      <div class="footer-nav-item">
+        <h3>Kantor Kami</h3>
+        <p>Indonesia Unamed road RT 01 RW 02 Surabaya</p>
       </div>
     </div>
   </section>
+  <section class="footer-copyright">
+    <p>Copyright &copy; 2021. All right reserved.</p>
+  </section>
 
-  <div class="footer-nav">
-    <div class="footer-nav-item">
-      <h3>Informasi</h3>
-      <a href="#">Artikel</a>
-      <a href="#">Galeri</a>
-    </div>
-    <div class="footer-nav-item">
-      <h3>Tentang</h3>
-      <a href="#">Tentang Kami</a>
-      <a href="#">Hubungi Kami</a>
-    </div>
-    <div class="footer-nav-item">
-      <h3>Kantor Kami</h3>
-      <p>Indonesia Unamed road RT 01 RW 02 Surabaya</p>
-    </div>
-  </div>
 </footer>
 
 <style lang="scss">
-  footer {
+  .footer-container {
     padding: 2.4rem 5.2rem;
     display: flex;
     justify-content: space-between;
@@ -85,7 +91,6 @@ import { Facebook, Instagram, Twitter } from "lucide-astro";
     & h3 {
       color: #4b4b4b;
       font-size: 24px;
-      font-family: Poppins;
       font-weight: 600;
       word-wrap: break-word;
     }
@@ -94,9 +99,15 @@ import { Facebook, Instagram, Twitter } from "lucide-astro";
     p {
       color: #787879;
       font-size: 20px;
-      font-family: Poppins;
       font-weight: 400;
       text-decoration: none;
     }
+  }
+
+  .footer-copyright {
+    text-align: center;
+    color: #4B4B4B;
+    border-top: 1px solid #d3d7df;
+    padding-bottom: 4rem;
   }
 </style>

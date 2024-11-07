@@ -7,7 +7,6 @@ interface Props {
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { Image } from "astro:assets";
@@ -30,7 +29,7 @@ const currentPath = Astro.url.pathname;
     <title>{title}</title>
   </head>
   <body>
-    <div class="web-header">
+    <div class:list={['web-header', { absolute: currentPath.startsWith("/article") }]}>
       <!-- navbar -->
       <Navbar />
 
@@ -43,19 +42,21 @@ const currentPath = Astro.url.pathname;
             <slot name="button" />
           </div>
         </section>
-        <section class="hero-image">
-          <Image src={heroVector} alt="Shape" width={520} />
-          {
-            currentPath == '/' && (
-              <Image
-                class="image-absolute"
-                src={studentHero}
-                alt=""
-                width={420}
-              />
-            )
-          }
-        </section>
+        {
+          !currentPath.startsWith("/article") && (
+            <section class="hero-image">
+              <Image src={heroVector} alt="Shape" width={520} />
+              {currentPath == "/" && (
+                <Image
+                  class="image-absolute"
+                  src={studentHero}
+                  alt=""
+                  width={420}
+                />
+              )}
+            </section>
+          )
+        }
       </div>
     </div>
     <!-- slot -->
@@ -89,6 +90,13 @@ const currentPath = Astro.url.pathname;
     height: 110svh;
     z-index: -10;
     padding: 0 5.2rem;
+
+    &.absolute {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+    }
   }
 
   .hero-head-wrapper {

@@ -1,4 +1,5 @@
 ---
+import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -26,6 +27,9 @@ import Layout from "../layouts/Layout.astro";
                 <h3>Office Address</h3>
                 <p>4140 Parker Rd.Richardson California 62639</p>
             </div>
+            <div class="contact-button">
+                <Button>Kontak Kami</Button>
+            </div>
         </section>
     </div>
 </Layout>
@@ -37,10 +41,17 @@ import Layout from "../layouts/Layout.astro";
         gap: 5rem;
         padding: 5rem;
 
-        .contact-header h2 {
-            font-size: 2.4rem;
-            font-weight: 600;
-            margin: 0;
+        .contact-header {
+            h2 {
+                font-size: 2.4rem;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: #949494;
+            }
         }
 
         .contact-info {
@@ -52,7 +63,18 @@ import Layout from "../layouts/Layout.astro";
 
                 h3 {
                     margin: 0;
+                    font-size: 1.2rem;
                 }
+
+                p {
+                    margin-top: 0.4rem;
+                    font-size: 1.2rem;
+                    color: #949494;
+                }
+            }
+
+            .contact-button {
+                margin-top: 3.2rem;
             }
         }
     }

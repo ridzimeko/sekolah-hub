@@ -26,25 +26,25 @@ import taekwondo from "../../public/partner-logo/taekwondo.png";
 import djarum from "../../public/partner-logo/djarum.png";
 
 const staffs = [
-    { image: staff1, name: 'Ms. Y', position: 'Kepala Sekolah'},
-    { image: staff2, name: 'Mr. X', position: 'Kepala Staff'},
-    { image: staff3, name: 'Ms. Y', position: 'Guru Matematika'},
-    { image: staff4, name: 'Mr. X', position: 'Guru Biologi'},
-    { image: staff5, name: 'Ms. Y', position: 'Guru Fisika'},
-    { image: staff6, name: 'Mr. X', position: 'Guru Bahasa'},
-    { image: staff7, name: 'Ms. Y', position: 'Guru Kimia'},
-    { image: staff8, name: 'Mr. X', position: 'Guru Seni Budaya'},
-]
+    { image: staff1, name: "Ms. Y", position: "Kepala Sekolah" },
+    { image: staff2, name: "Mr. X", position: "Kepala Staff" },
+    { image: staff3, name: "Ms. Y", position: "Guru Matematika" },
+    { image: staff4, name: "Mr. X", position: "Guru Biologi" },
+    { image: staff5, name: "Ms. Y", position: "Guru Fisika" },
+    { image: staff6, name: "Mr. X", position: "Guru Bahasa" },
+    { image: staff7, name: "Ms. Y", position: "Guru Kimia" },
+    { image: staff8, name: "Mr. X", position: "Guru Seni Budaya" },
+];
 
 const partners = [
-    { image: dbl, name: 'DBL Academy'},
-    { image: pertamina, name: 'Pertamina'},
-    { image: band, name: 'Persatuan Band Indonesia'},
-    { image: djarum, name: 'Djarum'},
-    { image: taekwondo, name: 'Taekwondo Indonesia'},
-    { image: djarum, name: 'Djarum'},
-    { image: taekwondo, name: 'Taekwondo Indonesia'}
-]
+    { image: dbl, name: "DBL Academy" },
+    { image: pertamina, name: "Pertamina" },
+    { image: band, name: "Persatuan Band Indonesia" },
+    { image: djarum, name: "Djarum" },
+    { image: taekwondo, name: "Taekwondo Indonesia" },
+    { image: djarum, name: "Djarum" },
+    { image: taekwondo, name: "Taekwondo Indonesia" },
+];
 ---
 
 <Layout title="Tentang Kami" description="">
@@ -53,28 +53,31 @@ const partners = [
         Penjelasan Tentang Sekolah Kami Yang Dapat Menambah Referesi Anda
     </p>
 
-    <Paragraph>
-        <Image
-            src={student1}
-            slot="image"
-            width={512}
-            height={512}
-            alt="student"
-        />
-        <h2 style="margin-top: 0;" slot="head">
-            Sekolah Alam <br /> Insan Mulia Berkarya
-        </h2>
-        <p slot="text">
-            Sekolah Kami merupakan sekolah informal yang dikelola untuk membantu
-            anak mengembangkan bakat dan kemampuannya. Dengan memberikan
-            kurikulum terbaik agar anak bisa memilih minatnya dan fokus
-            mengembangkan minat tersebut. Sekolah ini didirikan sejak tahun 1989
-            dan terus berkembang
-        </p>
-        <Button>Mulai Belajar</Button>
-    </Paragraph>
-
     <div style="margin: 6rem 0;">
+        <Paragraph>
+            <Image
+                src={student1}
+                slot="image"
+                width={512}
+                height={512}
+                alt="student"
+            />
+            <h2 style="margin-top: 0;" slot="head">
+                Sekolah Alam <br /> Insan Mulia Berkarya
+            </h2>
+            <p slot="text">
+                Sekolah Kami merupakan sekolah informal yang dikelola untuk
+                membantu anak mengembangkan bakat dan kemampuannya. Dengan
+                memberikan kurikulum terbaik agar anak bisa memilih minatnya dan
+                fokus mengembangkan minat tersebut. Sekolah ini didirikan sejak
+                tahun 1989 dan terus berkembang
+            </p>
+            <Button>Mulai Belajar</Button>
+        </Paragraph>
+    </div>
+
+    <div class="feature-wrapper">
+        <h2>Keunggulan Sekolah Kami</h2>
         <Features />
     </div>
 
@@ -84,85 +87,154 @@ const partners = [
             <p>Berikut adalah video profil dari sekolah kami</p>
         </section>
         <section class="video-section">
-            <Image class="video-thumb" src={profileVideoThumb} alt="Video profil sekolah Inagata" />
+            <Image
+                class="video-thumb"
+                src={profileVideoThumb}
+                alt="Video profil sekolah Inagata"
+            />
         </section>
     </div>
 
     <div class="staff-wrapper">
         <h1>Guru dan Staff Sekolah</h1>
         <div class="staff-card-container">
-          { staffs.map(staff => (
-           <div class="staff-card">
-              <Image class="staff-image" src={staff.image} alt={staff.name} />
-              <div class="staff-info">
-                <h3 class="staff-name">{staff.name}</h3>
-                <p class="staff-position">{staff.position}</p>
-              </div>
-           </div>
-           ))
-        }
-    </div>
-
-    <div class="partner-wrapper">
-        <div class="partner-header">
-            <h2>Partner Kerja Sama</h2>
-            <p>Kami bekerja sama dengan berbagai lembaga diseluruh Indonesia untuk menyalurkan bakat siswa kami</p>
-        </div>
-        <div class="partner-logo-container">
             {
-                partners.map(partner => (
-                    <Image class='partner-img' src={partner.image} alt={partner.name} />
+                staffs.map((staff) => (
+                    <div class="staff-card">
+                        <Image
+                            class="staff-image"
+                            src={staff.image}
+                            alt={staff.name}
+                        />
+                        <div class="staff-info">
+                            <h3 class="staff-name">{staff.name}</h3>
+                            <p class="staff-position">{staff.position}</p>
+                        </div>
+                    </div>
                 ))
             }
         </div>
+
+        <div class="partner-wrapper">
+            <div class="partner-header">
+                <h2>Partner Kerja Sama</h2>
+                <p>
+                    Kami bekerja sama dengan berbagai lembaga diseluruh
+                    Indonesia untuk menyalurkan bakat siswa kami
+                </p>
+            </div>
+            <div class="partner-logo-container">
+                {
+                    partners.map((partner) => (
+                        <Image
+                            class="partner-img"
+                            src={partner.image}
+                            alt={partner.name}
+                        />
+                    ))
+                }
+            </div>
+        </div>
     </div>
-</Layout>
 
-<style lang="scss">
-    .video-profile-wrapper {
-
-        .video-profile-header {
+    <style lang="scss">
+        .feature-wrapper {
+            margin: 12rem 0 4rem;
             text-align: center;
-        }
 
-        .video-section {
-            position: relative;
-            display: grid;
-            place-items: center;
-            width: fit-content;
-            margin: 0 auto;
-
-            .video-thumb {
-                width: 920px;
-                height: 460px;
-                object-fit: cover;
-                border-radius: 2rem;
-            }
-            
-            button {
-                position: absolute;
-                border: none;
-                background: white;
-                border-radius: 100%;
+            h2 {
+                font-size: 2.4rem;
+                font-weight: 600;
             }
         }
-    }
 
-    .staff-wrapper {
-        text-align: center;
+        .video-profile-wrapper {
+            margin: 8rem 0;
 
-        .staff-card-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            .video-profile-header {
+                text-align: center;
+
+                h2 {
+                    font-size: 2.4rem;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    margin-top: 0.6rem;
+                }
+            }
+
+            .video-section {
+                position: relative;
+                display: grid;
+                place-items: center;
+                width: fit-content;
+                margin: 0 auto;
+
+                .video-thumb {
+                    width: 920px;
+                    height: 460px;
+                    object-fit: cover;
+                    border-radius: 2rem;
+                }
+
+                button {
+                    position: absolute;
+                    border: none;
+                    background: white;
+                    border-radius: 100%;
+                }
+            }
         }
-    }
 
-    .partner-wrapper {
-        .partner-logo-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
+        .staff-wrapper {
+            h1 {
+                font-size: 2.4rem;
+                font-weight: 600;
+                margin-bottom: 4rem;
+            }
+
+            .staff-card-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+
+            .staff-name {
+                font-size: 1.6rem;
+                margin-bottom: 0;
+            }
+
+            .staff-position {
+                margin-top: 0.4rem;
+            }
         }
-    }
-</style>
+
+        .partner-wrapper {
+            text-align: center;
+
+            .partner-header {
+                margin-top: 10rem;
+                margin-bottom: 3.2rem;
+
+                h2 {
+                    font-size: 2.4rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    max-width: 640px;
+                    margin: 0 auto;
+                }
+            }
+
+            .partner-logo-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+        }
+    </style>
+</Layout>
