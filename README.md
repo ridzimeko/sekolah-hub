@@ -1,4 +1,4 @@
-# Sekolah Hub Internship: Slicing Web Design
+# Hub Internship Technical Test: Slicing Web Design
 
 ## **Deskripsi:**
 
