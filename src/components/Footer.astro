@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 // Inagata image
 import inagataTemplate from "../../public/Inagata Template.svg";
-import { Facebook, Instagram, Twitter } from "lucide-astro";
+import SocialIcon from "./partials/SocialIcon.astro";
 ---
 
 <footer>
@@ -17,13 +17,13 @@ import { Facebook, Instagram, Twitter } from "lucide-astro";
   
       <div class="social-icons">
         <div class="social-icon">
-          <Twitter size={100} />
+          <SocialIcon name="lucide:twitter">
         </div>
         <div class="social-icon">
-          <Facebook size={100} fill="#e33fab" />
+          <SocialIcon name="lucide:facebook">
         </div>
         <div class="social-icon">
-          <Instagram size={100} />
+          <SocialIcon name="lucide:instagram">
         </div>
       </div>
     </div>
@@ -31,13 +31,13 @@ import { Facebook, Instagram, Twitter } from "lucide-astro";
     <div class="footer-nav">
       <div class="footer-nav-item">
         <h3>Informasi</h3>
-        <a href="#">Artikel</a>
-        <a href="#">Galeri</a>
+        <a href="/news">Artikel</a>
+        <a href="/gallery">Galeri</a>
       </div>
       <div class="footer-nav-item">
         <h3>Tentang</h3>
-        <a href="#">Tentang Kami</a>
-        <a href="#">Hubungi Kami</a>
+        <a href="/about">Tentang Kami</a>
+        <a href="/contact">Hubungi Kami</a>
       </div>
       <div class="footer-nav-item">
         <h3>Kantor Kami</h3>
@@ -67,19 +67,7 @@ import { Facebook, Instagram, Twitter } from "lucide-astro";
     gap: 12px;
     align-items: center;
   }
-
-  .social-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    border: 2px solid #e33fab;
-    width: 1rem;
-    height: 1rem;
-    padding: 0.6rem;
-    color: #e33fab;
-  }
-
+  
   .footer-nav {
     width: 676px;
     height: 146px;

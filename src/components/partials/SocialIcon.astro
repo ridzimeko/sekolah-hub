@@ -1,0 +1,42 @@
+---
+interface Props {
+  name: string;
+}
+
+import { Icon } from "astro-icon/components";
+const { name } = Astro.props;
+---
+
+<div class="social-icon-component">
+  <a href="#">
+    <div class="social-icon">
+      <Icon name={name} size={18} />
+    </div>
+  </a>
+</div>
+
+<style>
+  .social-icon-component {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    .social-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      border: 2px solid #e33fab;
+      width: 1.4rem;
+      height: 1.4rem;
+      padding: 0.6rem;
+      color: #e33fab;
+
+      &:hover {
+        background-color: #e33fab;
+        color: white;
+        transition: 0.3s;
+      }
+    }
+  }
+</style>

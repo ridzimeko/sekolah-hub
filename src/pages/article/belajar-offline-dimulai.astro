@@ -8,27 +8,28 @@ import articleImg2 from "../../../public/photos/unsplash_g1Kr4Ozfoac.png";
 import articleImg3 from "../../../public/photos/unsplash_iQPr1XkF5F0.png";
 import busImg from "../../../public/photos/unsplash_7K_agbqPqYo.png";
 import { Image } from "astro:assets";
+import SocialIcon from "../../components/partials/SocialIcon.astro";
 
 const relatedArticles = [
     {
         image: articleImg1,
         label: "Pengumuman",
-        date: "2020-12-12",
+        date: "12 Desember 2020",
         title: "Kegiatan Belajar Mengajar Offline Dimulai",
     },
     {
         image: articleImg2,
         label: "Pengumuman",
-        date: "2020-12-12",
+        date: "12 Desember 2020",
         title: "Pengambilan Raport Semester Ganjil 2021-2022",
     },
     {
         image: articleImg3,
         label: "Berita",
-        date: "2020-12-12",
+        date: "12 Desember 2020",
         title: "Jam Belajar Yang Efektif Pada Anak 8 - 12 Tahun",
     },
-]
+];
 ---
 
 <Layout title="Kegiatan Belajar Mengajar Offline Dimulai" description="">
@@ -37,64 +38,67 @@ const relatedArticles = [
         <h2>12 Desember 2020</h2>
         <Image class="article-img" src={busImg} alt="School bus" />
         <p>
-            Jika anak kita ditanya apa mimpinya pasti jawabnya saya ingin kembali
-            belajar di sekolah. Saya ingin bertemu dengan teman-teman sekelas saya.
-            begitupun sebagian besar orang tua, mimpi mereka adalah melihat anaknya
-            kembali ke aktivitas sekolah secara langsung. Orang tua selama ini
-            banyak yang mengaku lelah karena anak-anaknya selama pandemi lebih
-            banyak menghabiskan waktu di depan layar gawainya bukan hanya untuk
-            belajar namun juga untuk bermain game. Belum lagi harus menemani dan
-            membantu anak-anak belajar sementara pekerjaan di rumah tidaklah
-            sedikit.
+            Jika anak kita ditanya apa mimpinya pasti jawabnya saya ingin
+            kembali belajar di sekolah. Saya ingin bertemu dengan teman-teman
+            sekelas saya. begitupun sebagian besar orang tua, mimpi mereka
+            adalah melihat anaknya kembali ke aktivitas sekolah secara langsung.
+            Orang tua selama ini banyak yang mengaku lelah karena anak-anaknya
+            selama pandemi lebih banyak menghabiskan waktu di depan layar
+            gawainya bukan hanya untuk belajar namun juga untuk bermain game.
+            Belum lagi harus menemani dan membantu anak-anak belajar sementara
+            pekerjaan di rumah tidaklah sedikit.
         </p>
         <p>
             Namun perlahan demi perlahan sejak ktober lalu beberapa sekolah di
-            Indonesia sudah mulai menerapkan Pembelajaran Tatap Muka atau PTM namun
-            se ara terbatas termasuk di Purwakarta kota saya ter inta. Seminggu
-            sekali anak anak bersekolah tentunya dengan pembatasan jarak ataupun
-            waktu belajar yang mengalami pengurangan.
+            Indonesia sudah mulai menerapkan Pembelajaran Tatap Muka atau PTM
+            namun se ara terbatas termasuk di Purwakarta kota saya ter inta.
+            Seminggu sekali anak anak bersekolah tentunya dengan pembatasan
+            jarak ataupun waktu belajar yang mengalami pengurangan.
         </p>
         <p>
             Sekolah tempat saya mengabdi yaitu SMPN 8 Purwakarta baru di anuari
-            tahun 2022 ini akan mulai melaksanakan pembelajaran tatap muka se ara
-            terbatas setelah memenuhi persyaratan yang ditentukan oleh Pemerintah
-            Daerah dalam hal ini Dinas Pendidikan yang beberapa syaratnya antara
-            lain tersedianya fasilitas kesehatan siswa siswi serta i itas sekolah
-            yang sudah di aksin dan beberapa persyaratan lainnya
+            tahun 2022 ini akan mulai melaksanakan pembelajaran tatap muka se
+            ara terbatas setelah memenuhi persyaratan yang ditentukan oleh
+            Pemerintah Daerah dalam hal ini Dinas Pendidikan yang beberapa
+            syaratnya antara lain tersedianya fasilitas kesehatan siswa siswi
+            serta i itas sekolah yang sudah di aksin dan beberapa persyaratan
+            lainnya
         </p>
         <p>
-            Karenanya untuk mewujudkan mimpi para siswa yang ingin kembali belajar
-            di sekolah di hari umat tanggal 7 anuari 2022 diselenggarakan kegiatan
-            gotong royong membersihkan sekolah yang dilaksanakan oleh perwakilan
-            orang tua siswa perwakilan siswa perwakilan SIS dan tentunya
-            dilaksanakan juga oleh segenap i itas sekolah baik itu uru maupun Staff
-            Tata saha.
+            Karenanya untuk mewujudkan mimpi para siswa yang ingin kembali
+            belajar di sekolah di hari umat tanggal 7 anuari 2022
+            diselenggarakan kegiatan gotong royong membersihkan sekolah yang
+            dilaksanakan oleh perwakilan orang tua siswa perwakilan siswa
+            perwakilan SIS dan tentunya dilaksanakan juga oleh segenap i itas
+            sekolah baik itu uru maupun Staff Tata saha.
         </p>
         <p>
-            Kegiatan gotong royong membersihkan sekolah tersebut diadakan agar ketika
-            anak kembali ke kelasnya kelasnya sudah dalam keadaan bersih. Seperti
-            yang dikatakan oleh perwakilan orang tua dari kelas 7 dan 9 yang
-            mengatakan alasan ikut gotong royong membersihkan kelas anaknya agar
-            anaknya dapat belajar dengan nyaman dan sehat karena lingkungan kelas
-            maupun sekolahnya yang bersih. Selain itu mengingat salah satu syarat
-            bisa diadakan pembelajaran tatap muka adalah lingkungan pembelajaran
-            yang bersih dan sehat.
+            Kegiatan gotong royong membersihkan sekolah tersebut diadakan agar
+            ketika anak kembali ke kelasnya kelasnya sudah dalam keadaan bersih.
+            Seperti yang dikatakan oleh perwakilan orang tua dari kelas 7 dan 9
+            yang mengatakan alasan ikut gotong royong membersihkan kelas anaknya
+            agar anaknya dapat belajar dengan nyaman dan sehat karena lingkungan
+            kelas maupun sekolahnya yang bersih. Selain itu mengingat salah satu
+            syarat bisa diadakan pembelajaran tatap muka adalah lingkungan
+            pembelajaran yang bersih dan sehat.
         </p>
         <p>
             Selain membawa peralatan kebersihan masing masing ada pula orang tua
-            yang membawa makanan untuk dikonsumsi setelah kelas selesai. Terjalin
-            pula kerjasama yang baik antar orang tua padahal ada yang tidak kenal
-            awalnya begitu juga anak anak kelas 7 yang akhirnya bisa bertemu dengan
-            teman kelasnya se ara langsung setelah di semester ganjil ini hanya
-            bertemu di pembelajaran online. Semuanya hadir demi mewujudkan
-            pembelajaran tatap muka meskipun terbatas
+            yang membawa makanan untuk dikonsumsi setelah kelas selesai.
+            Terjalin pula kerjasama yang baik antar orang tua padahal ada yang
+            tidak kenal awalnya begitu juga anak anak kelas 7 yang akhirnya bisa
+            bertemu dengan teman kelasnya se ara langsung setelah di semester
+            ganjil ini hanya bertemu di pembelajaran online. Semuanya hadir demi
+            mewujudkan pembelajaran tatap muka meskipun terbatas
         </p>
     </article>
 
     <div class="share-wrapper">
         <h3>Bagikan Artikel</h3>
         <div class="share-icon-container">
-            <!-- TODO: membuat component share icon -->
+            <SocialIcon name="lucide:link" />
+            <SocialIcon name="simple-icons:whatsapp" />
+            <SocialIcon name="lucide:facebook" />
         </div>
     </div>
 
@@ -103,7 +107,7 @@ const relatedArticles = [
         <div class="article-lists">
             {
                 relatedArticles.map((article) => (
-                    <ArticleCard 
+                    <ArticleCard
                         image={article.image}
                         label={article.label}
                         date={article.date}
@@ -117,7 +121,7 @@ const relatedArticles = [
 
 <style>
     article {
-        margin: 12rem 0;
+        margin-top: 12rem;
 
         h1 {
             font-size: 3.2rem;
@@ -139,9 +143,6 @@ const relatedArticles = [
     }
 
     .share-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-bottom: 2rem;
 
         h3 {
@@ -152,10 +153,16 @@ const relatedArticles = [
     .share-icon-container {
         display: flex;
         gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 6rem;
     }
 
     .related-articles-wrapper {
         margin-bottom: 2rem;
+
+        h3 {
+            font-size: 2.4rem;
+        }
     }
 
     .article-lists {

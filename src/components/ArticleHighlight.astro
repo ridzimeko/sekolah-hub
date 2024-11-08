@@ -5,29 +5,37 @@ import Label from "./partials/Label.astro";
 ---
 
 <div class="article-highlight">
-    <h2 class="article-section-title">Informasi Terbaru</h2>
-    <div class="article-card-container">
-        <Image class="article-img" src={busImg} alt="School bus" />
-        <div class="article-label">
-            <Label label="Pengumuman" />
+    <a href="/article/belajar-offline-dimulai">
+        <h2 class="article-section-title">Informasi Terbaru</h2>
+        <div class="article-card-container">
+            <Image class="article-img" src={busImg} alt="School bus" />
+            <div class="article-label">
+                <Label label="Pengumuman" />
+            </div>
+            <h2 class="article-title">
+                Kegiatan Belajar Mengajar Offline Dimulai
+            </h2>
+            <p>
+                Jika anak kita ditanya apa mimpinya pasti jawabnya saya ingin
+                kembali belajar di sekolah. Saya ingin bertemu dengan
+                teman-teman sekelas saya. begitupun sebagian besar orang tua,
+                mimpi mereka adalah melihat anaknya kembali ke aktivitas sekolah
+                secara langsung. Orang tua selama ini banyak yang mengaku lelah
+                karena anak-anaknya selama pandemi lebih banyak menghabiskan
+                waktu <span class="read-more">Read More...</span>
+            </p>
         </div>
-        <h2 class="article-title">Kegiatan Belajar Mengajar Offline Dimulai</h2>
-        <p>
-            Jika anak kita ditanya apa mimpinya pasti jawabnya saya ingin
-            kembali belajar di sekolah. Saya ingin bertemu dengan teman-teman
-            sekelas saya. begitupun sebagian besar orang tua, mimpi mereka
-            adalah melihat anaknya kembali ke aktivitas sekolah secara langsung.
-            Orang tua selama ini banyak yang mengaku lelah karena anak-anaknya
-            selama pandemi lebih banyak menghabiskan waktu <span class="read-more"
-                >Read More...</span
-            >
-        </p>
-    </div>
+    </a>
 </div>
 
 <style lang="scss">
     .article-highlight {
         margin: 10rem 0;
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
 
         .article-section-title {
             font-size: 2.4rem;

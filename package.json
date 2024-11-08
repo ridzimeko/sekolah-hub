@@ -12,8 +12,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@fontsource/poppins": "^5.1.0",
+    "@iconify-json/lucide": "^1.2.12",
+    "@iconify-json/simple-icons": "^1.2.11",
     "astro": "^4.16.8",
-    "lucide-astro": "^0.454.0",
+    "astro-icon": "^1.1.2",
     "sass": "^1.80.6",
     "typescript": "^5.6.3"
   }

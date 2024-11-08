@@ -6,6 +6,7 @@ import Partner from "../components/Partner.astro";
 import Paragraph from "../components/Paragraph.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 // Image assets
 import student1 from "../../public/student1.png";
@@ -26,7 +27,6 @@ import rectangle1 from "../../public/vector/Rectangle 5.svg";
 import rectangle2 from "../../public/vector/Rectangle 6.svg";
 import ellipse_s1 from "../../public/vector/Ellipse-stroke1.png";
 import ellipse_s2 from "../../public/vector/Ellipse-stroke2.png";
-import { ArrowRight } from "lucide-astro";
 
 const activities = [
   { image: activity1, name: "Belajar Mengajar" },
@@ -107,15 +107,10 @@ const articles = [
         activities.map((act) => (
           <div class="card-item">
             <a href="#">
-              <Image
-                class="card-img"
-                src={act.image}
-                alt="Belajar mengajar"
-                width={320}
-              />
+              <Image class="card-img" src={act.image} alt="Belajar mengajar" />
               <div class="card-body">
                 <p>{act.name}</p>
-                <ArrowRight />
+                <Icon name="lucide:arrow-right" size={24} />
               </div>
             </a>
           </div>
@@ -338,7 +333,7 @@ const articles = [
 
       a {
         text-decoration: none;
-        color: #E33FAB;
+        color: #e33fab;
         font-size: 1.2rem;
       }
     }
