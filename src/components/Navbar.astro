@@ -1,24 +1,33 @@
 ---
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
-import schoolsLogo from "../../public/Schools Logo.png"
+import schoolsLogo from "../../public/Schools Logo.png";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav>
   <Image src={schoolsLogo} alt="Inagata School Icon" />
 
   <div class="nav-link-container">
-    <a href="/">Beranda</a>
-    <a href="/about">Tentang Kita</a>
-    <a href="/news">Berita</a>
-    <a href="/gallery">Galeri</a>
-    <a href="/contact">Kontak</a>
+    <a class:list={[{ active: currentPath === "/" }]} href="/">Beranda</a>
+    <a class:list={[{ active: currentPath === "/about" }]} href="/about"
+      >Tentang Kita</a
+    >
+    <a class:list={[{ active: currentPath === "/news" }]} href="/news">Berita</a
+    >
+    <a class:list={[{ active: currentPath === "/gallery" }]} href="/gallery"
+      >Galeri</a
+    >
+    <a class:list={[{ active: currentPath === "/contact" }]} href="/contact"
+      >Kontak</a
+    >
   </div>
 
   <Button>PPOB</Button>
 </nav>
 
-<style>
+<style lang="scss">
   nav {
     position: absolute;
     top: 0;
@@ -28,17 +37,36 @@ import schoolsLogo from "../../public/Schools Logo.png"
     justify-content: space-between;
     align-items: center;
     padding: 2.2rem 5.2rem;
-  }
 
-  .nav-link-container {
-    display: inline-flex;
-    justify-content: center;
-    gap: 2.6rem;
+    .nav-link-container {
+      display: inline-flex;
+      justify-content: center;
+      gap: 2.6rem;
 
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.18rem;
+      a {
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        color: white;
+        text-decoration: none;
+        font-size: 1.18rem;
+
+        &:is(.active,:hover)::after {
+          width: 40%;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: 0;
+          height: 2px;
+          background-color: white;
+          transition: all 0.3s ease-in-out;
+        }
+      }
     }
   }
 </style>
